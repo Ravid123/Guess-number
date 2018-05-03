@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "191202314280",
+    "firebase_url": "https://guessnumber-e84ea.firebaseio.com",
+    "project_id": "guessnumber-e84ea",
+    "storage_bucket": "guessnumber-e84ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191202314280:android:dff3af500ff4d246",
+        "android_client_info": {
+          "package_name": "com.example.ravid.guessnumber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191202314280-v3s1qfab467bvffm7m52uvpbl9br4bau.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ravid.guessnumber",
+            "certificate_hash": "3d13468b9def69064fcc472e49f3794cfeac7dd8"
+          }
+        },
+        {
+          "client_id": "191202314280-fbjenskjq456h5vckaqr6obed4lts2lt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdgtEBbkONT90wj1v9mZyRJHjeCPtpiJk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191202314280-fbjenskjq456h5vckaqr6obed4lts2lt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/choiceFeild"-->
+        <!--android:hint="number"-->
+        <!--android:layout_above="@+id/resultFeild"-->
+        <!--android:layout_marginBottom="60dp" />-->
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+        <!--android:id="@+id/resultFeild"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="choose"-->
+        <!--android:id="@+id/chooseButton"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:id="@+id/playerNumberFeild"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:id="@+id/winnerPlayerFeild"-->
+        <!--android:layout_below="@+id/resultFeild"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="55dp" />-->
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:text="Choose a number between 1 - 9"-->
+        <!--android:id="@+id/ExplainChooseFeild"-->
+        <!--android:layout_above="@+id/choiceFeild"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="48dp" />-->
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+        <!--android:text=""-->
+        <!--android:id="@+id/PlayersLeftFeild"-->
+        <!--android:layout_above="@+id/choiceFeild"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="100dp" />-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Name: "
+        android:id="@+id/enterNameFeild"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameFeild"
+        android:layout_alignBottom="@+id/enterNameFeild"
+        android:layout_toEndOf="@+id/enterNameFeild" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create New Game"
+        android:id="@+id/createGameButton"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/nameFeild" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Join Game"
+        android:id="@+id/joinGameButton"
+        android:layout_below="@+id/createGameButton"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
