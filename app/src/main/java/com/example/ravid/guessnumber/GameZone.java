@@ -15,6 +15,7 @@ import com.example.ravid.guessnumber.GamePackage.ChoicesNumbers;
 import com.example.ravid.guessnumber.GamePackage.DBAccess;
 import com.example.ravid.guessnumber.GamePackage.EnterGame;
 import com.example.ravid.guessnumber.GamePackage.GameSession;
+import com.example.ravid.guessnumber.UI.Alerts;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -66,7 +67,7 @@ public class GameZone extends ActionBarActivity {
             firebaseRefChoices = new Firebase("https://guessnumber-e84ea.firebaseio.com/Games/" + currentGameCode + "/Choices");
             gameCodeTextFeild.setText("Game Code: " + currentGameCode);
         } else {
-            // TODO : Alert problem
+            new Alerts().badAlert(GameZone.this, "problem loading game");
         }
 
 
@@ -79,13 +80,13 @@ public class GameZone extends ActionBarActivity {
                     gameSession.setPlayerNumber(EnterGame.getPlayerNumber(Integer.parseInt(lastPlayerIndex), firebaseRefLastPlayerIndex));
                     playerNumberOutput.setText("PLAYER " + gameSession.getPlayerNumber());
                 } catch (Exception e) {
-                    errorAlert();
+                    dbErrorAlert();
                 }
             }
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
-                errorAlert();
+                dbErrorAlert();
             }
         });
 
@@ -146,7 +147,7 @@ public class GameZone extends ActionBarActivity {
                 } catch (IOException e) {
                     InvalidInputAlert();
                 } catch (Exception ex) {
-                    errorAlert();
+                    dbErrorAlert();
                 }
             }
         });
@@ -156,42 +157,15 @@ public class GameZone extends ActionBarActivity {
 
     // ************* ALERT functions *******************
     public void InvalidInputAlert() {
-        AlertDialog alertDialog = new AlertDialog.Builder(GameZone.this).create();
-        alertDialog.setTitle("PROBLEM");
-        alertDialog.setMessage("You can only enter a number between 1 - 9");
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-        alertDialog.show();
+        new Alerts().badAlert(GameZone.this, "You can only enter a number between 1 - 9");
     }
 
     public void okInputAlert() {
-        AlertDialog alertDialog = new AlertDialog.Builder(GameZone.this).create();
-        alertDialog.setTitle("OK");
-        alertDialog.setMessage("We got your choice");
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-        alertDialog.show();
+        new Alerts().okAlert(GameZone.this, "We got your choice");
     }
 
-    public void errorAlert() {
-        AlertDialog alertDialog = new AlertDialog.Builder(GameZone.this).create();
-        alertDialog.setTitle("ERROR");
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-        alertDialog.show();
+    public void dbErrorAlert() {
+        new Alerts().badAlert(GameZone.this, "Problem accessing server");
     }
 
 

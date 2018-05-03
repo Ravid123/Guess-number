@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.ravid.guessnumber.GamePackage.createGame;
+import com.example.ravid.guessnumber.UI.Alerts;
 import com.firebase.client.Firebase;
 
 import java.io.IOException;
@@ -53,16 +54,7 @@ public class CreateGameActivity extends ActionBarActivity {
     }
 
     public void InvalidInputAlert() {
-        AlertDialog alertDialog = new AlertDialog.Builder(CreateGameActivity.this).create();
-        alertDialog.setTitle("PROBLEM");
-        alertDialog.setMessage("Number of players must be between 1 - 50");
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-        alertDialog.show();
+        new Alerts().badAlert(CreateGameActivity.this, "Number of players must be between 1 - 50");
     }
 
 
