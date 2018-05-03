@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.ravid.guessnumber.UI.Alerts;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -30,7 +31,6 @@ public class MainActivity extends ActionBarActivity {
     private Button createGameButton;
     private Button joinGameButton;
     private Firebase firebaseGamesRef;
-    private boolean gameExists = false;
     private List<String> gameCodes = new ArrayList<String>();
 
     @Override
@@ -95,12 +95,11 @@ public class MainActivity extends ActionBarActivity {
            @Override
         public void onClick(DialogInterface dialog, int which) {
                if (isGameCodeExist(codeInput.getText().toString())) {
-                   // TODO : enter the game
                    Intent intent = new Intent(MainActivity.this, GameZone.class);
                    intent.putExtra(Constants.intentParameterGameCodeKey, codeInput.getText().toString());
                    startActivity(intent);
                } else {
-                   // TODO : Alert for wrong game code
+                   new Alerts().badAlert(MainActivity.this, "Game code does not exist");
                }
            }
         });
@@ -114,7 +113,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public boolean isGameCodeExist(final String gameCode) {
-        gameExists = false;
+        boolean gameExists = false;
         for (String currentGameCode : gameCodes) {
             if (currentGameCode.equals(gameCode)) {
                 gameExists = true;
